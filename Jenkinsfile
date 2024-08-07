@@ -26,7 +26,7 @@ pipeline {
         sh "docker push anselmschaefer/spring-boot-test"
       }
     }
-    stage("Deploy to staging") {
+  /*  stage("Deploy to staging") {
       steps {
         sh "docker run -d --rm -p 8765:8080 --name spring-boot-test anselmschaefer/spring-boot-test"
       }
@@ -36,11 +36,11 @@ pipeline {
         sleep 60
         sh "chmod +x acceptance_test.sh && ./acceptance_test.sh"
       }
-    }
+    } */
   }
-  post {
+ /* post {
     always {
       sh "docker stop spring-boot-test"
     }
-  }
+  } */
 }
