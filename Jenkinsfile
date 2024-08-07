@@ -18,17 +18,17 @@ pipeline {
     }
     stage("Build Docker Image") {
       steps {
-        sh "docker build -t anselmschaefer/spring-boot-test:latest ."
+        sh "docker build -t jeetdeveloper/spring-boot-test:latest ."
       }
     }
     stage("Docker push") {
       steps {
-        sh "docker push anselmschaefer/spring-boot-test"
+        sh "docker push jeetdeveloper/spring-boot-test"
       }
     }
-    stage("Deploy to staging") {
+ /*   stage("Deploy to staging") {
       steps {
-        sh "docker run -d --rm -p 8765:8080 --name spring-boot-test anselmschaefer/spring-boot-test"
+        sh "docker run -d --rm -p 8765:8080 --name spring-boot-test jeetdeveloper/spring-boot-test"
       }
     }
     stage("Acceptance test") {
@@ -36,11 +36,11 @@ pipeline {
         sleep 60
         sh "chmod +x acceptance_test.sh && ./acceptance_test.sh"
       }
-    }
+    } */
   }
-  post {
+  /*post {
     always {
       sh "docker stop spring-boot-test"
     }
-  }
+  } */
 }
