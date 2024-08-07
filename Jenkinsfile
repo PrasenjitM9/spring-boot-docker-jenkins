@@ -21,11 +21,18 @@ pipeline {
         sh "docker build -t jeetdeveloper/spring-boot-test:latest ."
       }
     }
-    stage("Docker push") {
+/*    stage("Docker push") {
       steps {
         sh "docker push jeetdeveloper/spring-boot-test:latest"
       }
-    }
+    } */
+    stage('Push Docker Image') {
+            steps {
+                withDockerRegistry([credentialsId: "dockerhub", url: "https://index.docker.io/v1/"]) {
+                    sh "docker push jeetdeveloper/spring-boot-test:latest"
+                }
+            }
+        }
  /*   stage("Deploy to staging") {
       steps {
         sh "docker run -d --rm -p 8765:8080 --name spring-boot-test jeetdeveloper/spring-boot-test"
