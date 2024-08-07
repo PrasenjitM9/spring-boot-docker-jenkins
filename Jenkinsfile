@@ -26,11 +26,7 @@ pipeline {
         sh "docker push jeetdeveloper/spring-boot-test"
       }
     }
-<<<<<<< HEAD
  /*   stage("Deploy to staging") {
-=======
-  /*  stage("Deploy to staging") {
->>>>>>> 705262b9485c78fffd2c3408fc0d55b3bb5580dd
       steps {
         sh "docker run -d --rm -p 8765:8080 --name spring-boot-test jeetdeveloper/spring-boot-test"
       }
@@ -42,11 +38,8 @@ pipeline {
       }
     } */
   }
-<<<<<<< HEAD
-  /*post {
-=======
+
  /* post {
->>>>>>> 705262b9485c78fffd2c3408fc0d55b3bb5580dd
     always {
       sh "docker stop spring-boot-test"
     }
