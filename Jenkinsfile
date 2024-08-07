@@ -23,7 +23,7 @@ pipeline {
     }
     stage("Docker push") {
       steps {
-        sh "docker push jeetdeveloper/spring-boot-test"
+        sh "docker push jeetdeveloper/spring-boot-test:latest"
       }
     }
  /*   stage("Deploy to staging") {
