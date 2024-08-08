@@ -1,5 +1,12 @@
 pipeline {
   agent any
+  environment {
+        registryCredential = "dockerhub"
+        // Nexus repository credentials ID
+        //NEXUS_CREDENTIALS_ID = 'nexus-credentials-id'
+        // Nexus repository URL
+        //NEXUS_URL = 'http://your-nexus-repo-url/repository/your-repository/'
+    }
   stages {
     stage("Compile") {
       steps {
